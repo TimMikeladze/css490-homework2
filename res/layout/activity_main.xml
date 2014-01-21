@@ -34,7 +34,6 @@
             android:layout_toRightOf="@+id/textview_bill_total"
             android:ems="10"
             android:inputType="numberDecimal" />
-
     </RelativeLayout>
 
     <RelativeLayout
@@ -69,11 +68,12 @@
             android:scaleType="fitCenter"
             android:src="@drawable/left" />
 
-        <EdittText
+        <EditText
             android:id="@+id/edittext_tip_percentage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@+id/image_tip_decrease"
+            android:editable="false"
             android:ems="6"
             android:inputType="numberDecimal" />
 
@@ -114,9 +114,8 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
             android:layout_toRightOf="@+id/textview_total"
-            android:ems="10"
-            android:editable="false" />
-
+            android:editable="false"
+            android:ems="10" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -142,6 +141,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@+id/textview_party_size"
+            android:editable="false"
             android:ems="2"
             android:inputType="number" >
         </EditText>
@@ -151,7 +151,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@+id/edittext_party_size"
-            android:text="Split Total"
+            android:text="Split"
             android:textSize="18sp" />
 
         <EditText
@@ -160,7 +160,7 @@
             android:layout_height="wrap_content"
             android:layout_toRightOf="@+id/textview_split_total"
             android:editable="false"
-            android:ems="3" >
+            android:ems="4" >
         </EditText>
 
         <ImageButton
