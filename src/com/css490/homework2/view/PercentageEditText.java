@@ -6,6 +6,7 @@ import android.widget.EditText;
 
 
 public class PercentageEditText extends EditText {
+    private double value;
 
     public PercentageEditText(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
@@ -19,9 +20,12 @@ public class PercentageEditText extends EditText {
         super(context);
     }
 
-    public void setPercentage(double percentage) {
-        setText(String.valueOf(percentage) + "%");
+    public void setText(double value) {
+        setText(String.valueOf(value) + "%");
     }
 
+    public double getValue(){
+        return value;
+    }
 
 }

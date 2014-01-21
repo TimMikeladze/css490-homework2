@@ -1,4 +1,4 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,147 +9,185 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".MainActivity" >
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+    <RelativeLayout
+        android:id="@+id/layout_row_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="30dp" >
 
         <TextView
             android:id="@+id/textview_bill_total"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="0.60"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
             android:text="Bill Total"
             android:textSize="18sp" />
 
         <EditText
             android:id="@+id/edittext_bill_total"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="0.90"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/textview_bill_total"
             android:ems="10"
-            android:inputType="numberDecimal" >
-        </EditText>
-    </LinearLayout>
+            android:inputType="numberDecimal" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout_row_2"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp" >
+        android:layout_below="@+id/layout_row_1"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="30dp" >
 
         <TextView
             android:id="@+id/textview_tip"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="0.60"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="10dp"
             android:text="Tip"
             android:textSize="18sp" />
 
         <ImageButton
-            android:id="@+id/button_decrement_tip"
+            android:id="@+id/image_tip_decrease"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/textview_tip"
+            android:adjustViewBounds="true"
+            android:background="@null"
+            android:clickable="true"
+            android:onClick="decreaseTip"
+            android:scaleType="fitCenter"
+            android:src="@drawable/left" />
+
+        <EdittText
+            android:id="@+id/edittext_tip_percentage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="0.20"
-            android:src="@drawable/ic_launcher" />
-
-        <EditText
-            android:id="@+id/edittext_tip"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1.00"
-            android:ems="10"
-            android:inputType="none" >
-        </EditText>
+            android:layout_toRightOf="@+id/image_tip_decrease"
+            android:ems="6"
+            android:inputType="numberDecimal" />
 
         <ImageButton
-            android:id="@+id/button_increment_tip"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.20"
-            android:src="@drawable/ic_launcher" />
-    </LinearLayout>
+            android:id="@+id/image_tip_increase"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_toRightOf="@+id/edittext_tip_percentage"
+            android:adjustViewBounds="true"
+            android:background="@null"
+            android:clickable="true"
+            android:onClick="increaseTip"
+            android:scaleType="fitCenter"
+            android:src="@drawable/right" />
+    </RelativeLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    <RelativeLayout
+        android:id="@+id/layout_row_3"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp" >
+        android:layout_below="@+id/layout_row_2"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="30dp" >
 
         <TextView
             android:id="@+id/textview_total"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="0.60"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
             android:text="Total"
             android:textSize="18sp" />
 
         <EditText
             android:id="@+id/edittext_total"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="0.90"
+            android:layout_marginLeft="30dp"
+            android:layout_toRightOf="@+id/textview_total"
             android:ems="10"
-            android:inputType="none" >
-        </EditText>
-    </LinearLayout>
+            android:editable="false" />
 
-     <LinearLayout
-        android:layout_width="match_parent"
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout_row_4"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp" >
+        android:layout_below="@+id/layout_row_3"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="30dp" >
 
         <TextView
             android:id="@+id/textview_party_size"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="0.60"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
             android:text="Party Size"
             android:textSize="18sp" />
 
-        <ImageButton
-            android:id="@+id/button_decrement_party_size"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.20"
-            android:src="@drawable/ic_launcher" />
-
         <EditText
             android:id="@+id/edittext_party_size"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1.00"
-            android:ems="10"
-            android:inputType="none" >
-        </EditText>
-
-        <ImageButton
-            android:id="@+id/button_increment_party_size"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="0.20"
-            android:src="@drawable/ic_launcher" />
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp" >
+            android:layout_toRightOf="@+id/textview_party_size"
+            android:ems="2"
+            android:inputType="number" >
+        </EditText>
 
         <TextView
             android:id="@+id/textview_split_total"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="0.60"
+            android:layout_toRightOf="@+id/edittext_party_size"
             android:text="Split Total"
             android:textSize="18sp" />
 
         <EditText
             android:id="@+id/edittext_split_total"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="0.90"
-            android:ems="10"
-            android:inputType="none" >
+            android:layout_toRightOf="@+id/textview_split_total"
+            android:editable="false"
+            android:ems="3" >
         </EditText>
-    </LinearLayout>
 
-</LinearLayout>
+        <ImageButton
+            android:id="@+id/image_party_size_decrease"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_below="@+id/edittext_party_size"
+            android:layout_marginLeft="60dp"
+            android:adjustViewBounds="true"
+            android:background="@null"
+            android:clickable="true"
+            android:onClick="decreasePartySize"
+            android:scaleType="fitCenter"
+            android:src="@drawable/left" />
+
+        <ImageButton
+            android:id="@+id/image_party_size_increase"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_below="@+id/edittext_party_size"
+            android:layout_toRightOf="@+id/image_party_size_decrease"
+            android:adjustViewBounds="true"
+            android:background="@null"
+            android:clickable="true"
+            android:onClick="increasePartySize"
+            android:scaleType="fitCenter"
+            android:src="@drawable/right" />
+    </RelativeLayout>
+
+</RelativeLayout>
