@@ -74,6 +74,7 @@
             android:layout_height="wrap_content"
             android:layout_toRightOf="@+id/image_tip_decrease"
             android:editable="false"
+            android:focusable="false" 
             android:ems="6"
             android:inputType="numberDecimal" />
 
@@ -142,6 +143,7 @@
             android:layout_height="wrap_content"
             android:layout_toRightOf="@+id/textview_party_size"
             android:editable="false"
+            android:focusable="false"
             android:ems="2"
             android:inputType="number" >
         </EditText>
@@ -160,6 +162,7 @@
             android:layout_height="wrap_content"
             android:layout_toRightOf="@+id/textview_split_total"
             android:editable="false"
+            android:focusable="false"
             android:ems="4" >
         </EditText>
 
